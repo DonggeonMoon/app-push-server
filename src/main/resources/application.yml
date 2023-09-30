@@ -1,0 +1,6 @@
+spring:
+  config:
+    import: file:.env[.properties]
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
