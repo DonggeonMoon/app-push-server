@@ -32,12 +32,12 @@ class ScheduleServiceTest {
                 Schedule.builder()
                         .id("a")
                         .date(LocalDate.now())
-                        .description("오늘")
+                        .description("오늘 테스트")
                         .build(),
                 Schedule.builder()
                         .id("b")
                         .date(LocalDate.now().plusDays(1))
-                        .description("내일")
+                        .description("내일 테스트")
                         .build()
         );
     }
@@ -67,7 +67,6 @@ class ScheduleServiceTest {
 
     @Test
     @Order(3)
-    @Disabled(value = "not for production")
     void deleteSchedules() {
         scheduleService.deleteSchedules(schedules);
         schedules.forEach(
