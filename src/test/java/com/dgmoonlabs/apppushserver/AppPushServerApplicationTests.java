@@ -30,7 +30,7 @@ class AppPushServerApplicationTests {
         Message message = Message.builder()
                 .putData("score", "850")
                 .putData("time", "2:45")
-                .setToken(registrationToken)
+                .setTopic(topic)
                 .build();
 
         String response = FirebaseMessaging.getInstance().send(message);
