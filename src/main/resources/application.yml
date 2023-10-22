@@ -4,3 +4,6 @@ spring:
   data:
     mongodb:
       uri: ${MONGODB_URI}
+
+firebase:
+  service-account-file-path: ${SERVICE_ACCOUNT_PRIVATE_KEY_FILE_PATH}
