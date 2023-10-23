@@ -21,7 +21,6 @@ public class ScheduleService {
         return scheduleRepository.insert(schedules);
     }
 
-
     public void deleteSchedules(List<Schedule> schedules) {
         scheduleRepository.deleteAll(schedules);
     }
