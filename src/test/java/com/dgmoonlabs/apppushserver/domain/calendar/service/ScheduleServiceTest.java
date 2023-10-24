@@ -1,7 +1,7 @@
-package com.dgmoonlabs.apppushserver.domain.schedule.service;
+package com.dgmoonlabs.apppushserver.domain.calendar.service;
 
-import com.dgmoonlabs.apppushserver.domain.schedule.model.Schedule;
-import com.dgmoonlabs.apppushserver.domain.schedule.repository.ScheduleRepository;
+import com.dgmoonlabs.apppushserver.domain.calendar.model.Schedule;
+import com.dgmoonlabs.apppushserver.domain.calendar.repository.ScheduleRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Order;

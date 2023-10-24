@@ -1,4 +1,4 @@
-package com.dgmoonlabs.apppushserver.domain.schedule.service;
+package com.dgmoonlabs.apppushserver.domain.calendar.service;
 
 import com.dgmoonlabs.apppushserver.global.util.FirebaseUtils;
 import com.google.firebase.messaging.Message;

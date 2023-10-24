@@ -1,6 +1,6 @@
-package com.dgmoonlabs.apppushserver.domain.schedule.repository;
+package com.dgmoonlabs.apppushserver.domain.calendar.repository;
 
-import com.dgmoonlabs.apppushserver.domain.schedule.model.Schedule;
+import com.dgmoonlabs.apppushserver.domain.calendar.model.Schedule;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.time.LocalDateTime;

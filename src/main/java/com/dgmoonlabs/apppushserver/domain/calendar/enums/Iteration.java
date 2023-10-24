@@ -1,4 +1,4 @@
-package com.dgmoonlabs.apppushserver.domain.schedule.enums;
+package com.dgmoonlabs.apppushserver.domain.calendar.enums;
 
 public enum Iteration {
     ONCE,

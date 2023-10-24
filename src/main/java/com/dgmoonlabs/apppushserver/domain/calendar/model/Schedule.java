@@ -1,6 +1,6 @@
-package com.dgmoonlabs.apppushserver.domain.schedule.model;
+package com.dgmoonlabs.apppushserver.domain.calendar.model;
 
-import com.dgmoonlabs.apppushserver.domain.schedule.enums.Iteration;
+import com.dgmoonlabs.apppushserver.domain.calendar.enums.Iteration;
 import com.google.firebase.messaging.AndroidConfig;
 import com.google.firebase.messaging.ApnsConfig;
 import com.google.firebase.messaging.WebpushConfig;

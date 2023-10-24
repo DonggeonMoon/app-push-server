@@ -1,4 +1,4 @@
-package com.dgmoonlabs.apppushserver.domain.schedule.model;
+package com.dgmoonlabs.apppushserver.domain.calendar.model;
 
 import lombok.AccessLevel;
 import lombok.Getter;
