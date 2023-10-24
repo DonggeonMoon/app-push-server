@@ -12,10 +12,10 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Document(collection = "schedule")
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
 @Getter
+@EqualsAndHashCode(callSuper = true, exclude = {"dateTime"})
 public class Schedule extends BaseEntity {
     @Id
     private String id;
