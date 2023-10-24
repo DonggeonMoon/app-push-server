@@ -57,9 +57,7 @@ class ScheduleServiceTest {
     @Order(1)
     void insertSchedules() {
         log.info(String.valueOf(new Date().toInstant().toEpochMilli()));
-        ;
         log.info(String.valueOf(new Date().getTime()));
-        ;
         List<Schedule> insertedSchedules = scheduleService.insertSchedules(schedules);
 
         log.info(insertedSchedules.toString());

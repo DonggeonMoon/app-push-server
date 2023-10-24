@@ -8,6 +8,7 @@ import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -15,8 +16,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
 @Getter
-@EqualsAndHashCode(callSuper = true, exclude = {"dateTime"})
-public class Schedule extends BaseEntity {
+@ToString
+@EqualsAndHashCode(callSuper = false, exclude = {"dateTime"})
+public class Schedule extends BaseEntity implements Serializable {
     @Id
     private String id;
 
