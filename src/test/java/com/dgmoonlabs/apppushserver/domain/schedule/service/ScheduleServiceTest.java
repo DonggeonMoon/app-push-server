@@ -4,13 +4,13 @@ import com.dgmoonlabs.apppushserver.domain.schedule.model.Schedule;
 import com.dgmoonlabs.apppushserver.domain.schedule.repository.ScheduleRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,12 +31,12 @@ class ScheduleServiceTest {
         schedules = List.of(
                 Schedule.builder()
                         .id("a")
-                        .date(LocalDate.now())
+                        .dateTime(LocalDateTime.now())
                         .description("오늘 테스트")
                         .build(),
                 Schedule.builder()
                         .id("b")
-                        .date(LocalDate.now().plusDays(1))
+                        .dateTime(LocalDateTime.now().plusDays(1))
                         .description("내일 테스트")
                         .build()
         );
@@ -48,7 +48,7 @@ class ScheduleServiceTest {
         scheduleService.getSchedulesOfToday()
                 .forEach(schedule -> {
                     log.info(schedule.getId());
-                    log.info(String.valueOf(schedule.getDate()));
+                    log.info(String.valueOf(schedule.getDateTime()));
                     log.info(schedule.getDescription());
                 });
     }
@@ -56,7 +56,15 @@ class ScheduleServiceTest {
     @Test
     @Order(1)
     void insertSchedules() {
+        log.info(String.valueOf(new Date().toInstant().toEpochMilli()));
+        ;
+        log.info(String.valueOf(new Date().getTime()));
+        ;
         List<Schedule> insertedSchedules = scheduleService.insertSchedules(schedules);
+
+        log.info(insertedSchedules.toString());
+        log.info(scheduleRepository.findById("a").get().toString());
+        log.info(scheduleRepository.findById("b").get().toString());
 
         insertedSchedules.forEach(
                 insertedSchedule -> {
@@ -76,7 +84,7 @@ class ScheduleServiceTest {
 
     @Test
     @Order(4)
-    @Disabled(value = "not for production")
+        //@Disabled(value = "not for production")
     void deleteAllSchedules() {
         scheduleService.deleteAllSchedules();
         assertThat(scheduleRepository.findAll().size()).isEqualTo(0);
