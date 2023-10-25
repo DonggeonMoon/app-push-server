@@ -1,4 +1,4 @@
-package com.dgmoonlabs.apppushserver.global.config;
+package com.dgmoonlabs.apppushserver.global.config.batch;
 
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.context.annotation.Configuration;
