@@ -79,12 +79,4 @@ class ScheduleServiceTest {
                 schedule -> assertThat(scheduleRepository.findById(schedule.getId())).isEqualTo(Optional.empty())
         );
     }
-
-    @Test
-    @Order(4)
-        //@Disabled(value = "not for production")
-    void deleteAllSchedules() {
-        scheduleService.deleteAllSchedules();
-        assertThat(scheduleRepository.findAll().size()).isEqualTo(0);
-    }
 }
