@@ -17,7 +17,7 @@ public class TriggerService {
     private final Job job;
     private final JobLauncher jobLauncher;
 
-    @Scheduled(cron = "0 0 * * *")
+    @Scheduled(cron = "0 0 * * * *")
     public void executeSchedule() {
         JobParameters jobParameter = new JobParametersBuilder()
                 .addParameter("uuid", new JobParameter(UUID.randomUUID().toString()))
