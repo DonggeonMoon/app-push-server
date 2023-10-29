@@ -1,4 +1,4 @@
-package com.dgmoonlabs.apppushserver.domain.calendar.service;
+package com.dgmoonlabs.apppushserver.domain.calendar.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.*;
@@ -7,13 +7,13 @@ import org.springframework.batch.core.repository.JobExecutionAlreadyRunningExcep
 import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
 import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 
 import java.util.UUID;
 
-@Service
+@Controller
 @RequiredArgsConstructor
-public class TriggerService {
+public class CalendarController {
     private final Job job;
     private final JobLauncher jobLauncher;
 
