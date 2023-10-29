@@ -16,11 +16,9 @@ public class ScheduleFacade {
 
     public void runTask() {
         scheduleService.getSchedulesOfToday()
-                .forEach(schedule -> {
-                    firebaseService.sendMessage(
-                            buildMessageFrom(schedule)
-                    );
-                });
+                .forEach(schedule -> firebaseService.sendMessage(
+                        buildMessageFrom(schedule)
+                ));
     }
 
     private Message buildMessageFrom(Schedule schedule) {
