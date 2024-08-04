@@ -1,9 +1,15 @@
 spring:
   config:
     import: file:.env[.properties]
-  data:
-    mongodb:
-      uri: ${MONGODB_URI}
-
+  datasource:
+    driver-class-name: ${DB_DRIVER_CLASS_NAME}
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: ${DB}
+    database-platform: ${DB_PLATFORM}
 firebase:
   service-account-file-path: ${SERVICE_ACCOUNT_PRIVATE_KEY_FILE_PATH}
