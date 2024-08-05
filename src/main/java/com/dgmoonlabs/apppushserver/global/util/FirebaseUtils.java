@@ -9,8 +9,9 @@ import com.google.firebase.messaging.Message;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 
 @NoArgsConstructor(access = AccessLevel.NONE)
@@ -18,7 +19,8 @@ import java.io.IOException;
 public class FirebaseUtils {
     public static void initializeAppWithPrivateKeyFile(String filePath) {
         try {
-            GoogleCredentials googleCredentials = GoogleCredentials.fromStream(new FileInputStream(filePath));
+            Resource resource = new ClassPathResource(filePath);
+            GoogleCredentials googleCredentials = GoogleCredentials.fromStream(resource.getInputStream());
             FirebaseApp.initializeApp(
                     FirebaseOptions.builder()
                             .setCredentials(googleCredentials)
